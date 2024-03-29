@@ -101,7 +101,13 @@
 
 @media only screen and (max-width: 630px) {
     .iconContainer{
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .iconContainer i{
+        cursor: pointer;
     }
 
     #theme{

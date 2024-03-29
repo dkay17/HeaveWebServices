@@ -25,3 +25,6 @@ function changeTheme() {
     }
 }
 
+function openOption() {
+    let
+}

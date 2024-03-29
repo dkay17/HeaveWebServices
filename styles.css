@@ -108,6 +108,8 @@
 
     .iconContainer i{
         cursor: pointer;
+        width: 10%;
+        height: 10%;
     }
 
     #theme{

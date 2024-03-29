@@ -107,4 +107,8 @@
     #theme{
         display: none;
     }
+
+    #head{
+        padding: 1.5% 0;
+    }
 }

@@ -1,0 +1,110 @@
+.body1{
+    background-image: url(images/Web_background\(Dark\).png);
+    background-size: 50% ;
+    margin: 0;
+    color: #fff;
+}
+
+.body2{
+    background-image: url(images/Web_background\(Light\).png);
+    background-size: 50% ;
+    margin: 0;
+    color: black;
+}
+
+#head{
+    width: 100%;
+    padding: 1% 0;
+    background-color: red;
+    display: flex;
+}
+
+.head{
+    background-color: blue;
+    width: 100%;
+    padding: 0 1%;
+    display: flex;
+}
+
+.image-container{
+    background-color: rebeccapurple;
+    width: 20%;
+    padding: 0 1%;
+    display: flex;
+    align-items: center;
+}
+
+.head img{
+    width: 35%;
+    border-radius: 50%;
+}
+
+.title{
+    border: 2px solid green;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#theme{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 1%;
+    gap: 5%;
+}
+
+.button-background{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1% 12% 1% 1%;
+    border-radius: 41%;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.themeButton{
+    background-color: #fff;
+    border-radius: 50%;
+    color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+
+.but-Back{
+    background-color: rgba(10, 10, 10, 0.3);
+    padding: 1% 1% 1% 12%;
+    border-radius: 41%;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.but2{
+    background-color: black;
+    border-radius: 50%;
+    color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+
+.iconContainer{
+    display: none;
+    width: 10%;
+    padding: 1%;
+}
+
+@media only screen and (max-width: 630px) {
+    .iconContainer{
+        display: block;
+    }
+
+    #theme{
+        display: none;
+    }
+}

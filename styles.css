@@ -70,7 +70,6 @@
 .themeButton{
     background-color: #fff;
     border-radius: 50%;
-    color: transparent;
     border: none;
     cursor: pointer;
     transition: all 500ms ease-in-out;
@@ -121,6 +120,7 @@
     align-items: center;
     border: 2px solid black;
 }
+
 
 @media only screen and (max-width: 630px) {
     .iconContainer{

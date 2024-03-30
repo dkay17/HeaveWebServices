@@ -4,6 +4,7 @@ let themeMode = document.getElementById('themeMode');
 let themeBack = document.getElementById('button-background');
 let barMenu = document.getElementById('barMenu');
 let iconContainer = document.getElementById('iconContainer');
+let icon = document.getElementById('fa-solid')
 let currentWebWidth = document.documentElement.clientWidth
 
 console.log(currentWebWidth)
@@ -53,6 +54,10 @@ function openOptions() {
         barMenu.classList.add('menuIsActive');
     }
 }
+
+// setInterval(function() {
+//     location.reload();
+// }, 5000);
 
 // transition: all 500ms ease-in-out;
 

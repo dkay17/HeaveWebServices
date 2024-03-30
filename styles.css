@@ -99,6 +99,29 @@
     padding: 1%;
 }
 
+.barMenu{
+    display: none;
+}
+
+.menuIsActive{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 34%;
+    height: 60%;
+    width: 65%;
+}
+
+.closeMenu{
+    background-color: greenyellow;
+    width: 15%;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
 @media only screen and (max-width: 630px) {
     .iconContainer{
         display: flex;
@@ -134,4 +157,8 @@
         width: 80%;
         border-radius: 50%;
     }
+
+    
 }
+
+

@@ -62,7 +62,7 @@
 .button-background{
     background-color: rgba(255, 255, 255, 0.3);
     padding: 1% 12% 1% 1%;
-    border-radius: 41%;
+    border-radius: 50px;
     transition: all 200ms ease-in-out;
     cursor: pointer;
 }
@@ -78,7 +78,7 @@
 .but-Back{
     background-color: rgba(10, 10, 10, 0.3);
     padding: 1% 1% 1% 12%;
-    border-radius: 41%;
+    border-radius: 50px;
     transition: all 200ms ease-in-out;
     cursor: pointer;
 }
@@ -122,6 +122,77 @@
     cursor: pointer;
 }
 
+#service-content{
+    background-color: indigo;
+    padding: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-options{
+    border: 2px solid yellow;
+}
+
+#projects_contact{
+    background-color: darkcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects-container{
+    border: 2px solid #fff;
+    margin: 0.1% 0.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+#contact-container{
+    border: 2px solid #fff;
+    margin: 0.1% 0.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+
+#contact{
+    text-align: center;
+}
+
+#contact .button{
+    padding: 5%;
+    border-radius: 50px;
+    background-color: burlywood;
+}
+
+#projects{
+    height: 30%;
+    width: 30%;
+    background-color: aqua;
+}
+
+.arrow{
+    margin: 7%;
+    animation: animateArrow 500ms infinite ease-in-out;
+}
+
+#video2, #video3{
+    display: none;
+}
+
+@keyframes animateArrow {
+    0%{
+        margin: 1% 7% 6% 7%;
+    }
+    100%{
+        margin: 6% 7% 1% 7%;
+    }
+}
 
 @media only screen and (max-width: 630px) {
     .iconContainer{
@@ -141,11 +212,6 @@
     #head{
         padding: 2% 0;
     }
-
-    /* .head{
-        padding: 0 1%;
-        display: flex;
-    } */
     
     .image-container{
         width: 20%;
@@ -159,7 +225,18 @@
         border-radius: 50%;
     }
 
-    
+    #service-content{
+        display: none;
+    }
+
+    #projects_contact{
+        display: block;
+    }
+
+    #projects{
+        width: 70%;
+        height: 70%;
+    }
 }
 
 

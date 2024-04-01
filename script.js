@@ -6,9 +6,37 @@ let barMenu = document.getElementById('barMenu');
 let iconContainer = document.getElementById('iconContainer');
 let icon = document.getElementById('fa-solid')
 let closeMen = document.getElementById('closeMenu')
-let currentWebWidth = document.documentElement.clientWidth
+let head = document.getElementById('head')
+let projects = document.getElementById('projects-container')
+let contact = document.getElementById('contact-container')
+let videos = document.querySelectorAll('video')
+// let video = document.getElementById('video')
+// let currentWebWidth = document.documentElement.clientWidth
+// let currentWebHeight = document.documentElement.clientHeight
+// let currentHeadHeight = head.clientHeight
 
-console.log(currentWebWidth)
+// console.log(currentWebWidth)
+// console.log(currentWebHeight)
+// console.log(currentHeadHeight)
+
+let currentVideoIndex = 0;
+
+function playNextVideo() {
+videos[currentVideoIndex].pause();
+videos[currentVideoIndex].style.display = 'none';
+currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+videos[currentVideoIndex].style.display = 'block';
+videos[currentVideoIndex].play();
+}
+
+function startVideoAnimation() {
+videos[currentVideoIndex].style.display = 'block';
+videos[currentVideoIndex].play();
+setInterval(playNextVideo, 5000); // Change video every 5 seconds (5000 milliseconds)
+}
+
+startVideoAnimation();
+
 function changeTheme() {
     // Checks if the current theme is in dark mode and changes to light mode
     if(body.classList.contains('body1')){
@@ -42,6 +70,24 @@ function changeTheme() {
     }
 }
 
+function openOptions() {
+    if(currentWebWidth <= 630){
+        iconContainer.style.color = 'transparent';
+        barMenu.classList.remove('barMenu');
+        barMenu.classList.add('menuIsActive');
+    }
+}
+
+// This code is incomplete(what's left: color change when theme is changed)
+function closeMenu() {
+    if(currentWebWidth <= 630){
+        barMenu.classList.remove('menuIsActive');
+        barMenu.classList.add('barMenu');
+        iconContainer.style.color = '#fff';
+    }
+}
+
+
 // This code is incomplete(what's left: color change when theme is changed)
 window.addEventListener('resize', function(){
     if(window.innerWidth > 630){
@@ -60,23 +106,23 @@ window.addEventListener('resize', function(){
     // this.location.reload()
 })
 
+// window.onload((e)=>{
+//     // setInterval(() => {
+//     //     video.removeAttribute('src')
+//     // }, 5);
+//     // setTimeout(function(){
+//     //     // video.removeAttribute('src')
+//     //     video.replaceChild('<source src="videos/vid2.mp4">')
+//     //     alert('You are dead hahahahahahah')
+//     // },1000)
+// })
 
-function openOptions() {
-    if(currentWebWidth <= 630){
-        iconContainer.style.color = 'transparent';
-        barMenu.classList.remove('barMenu');
-        barMenu.classList.add('menuIsActive');
-    }
-}
+// setTimeout(function(){
+//     // video.removeAttribute('src')
+//     video.appendChild('<source src="videos/vid2.mp4">')
+//     alert('You are dead hahahahahahah')
+// },3000)
 
-// This code is incomplete(what's left: color change when theme is changed)
-function closeMenu() {
-    if(currentWebWidth <= 630){
-        barMenu.classList.remove('menuIsActive');
-        barMenu.classList.add('barMenu');
-        iconContainer.style.color = '#fff';
-    }
-}
 
 // setInterval(function() {
 //     location.reload();

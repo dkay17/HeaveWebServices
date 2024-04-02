@@ -7,19 +7,16 @@ let iconContainer = document.getElementById('iconContainer');
 let icon = document.getElementById('fa-solid')
 let closeMen = document.getElementById('closeMenu')
 let head = document.getElementById('head')
+let projectsAndContact = document.getElementById('projects_contact')
 let projects = document.getElementById('projects-container')
 let contact = document.getElementById('contact-container')
 let videos = document.querySelectorAll('video')
-// let video = document.getElementById('video')
-// let currentWebWidth = document.documentElement.clientWidth
-// let currentWebHeight = document.documentElement.clientHeight
-// let currentHeadHeight = head.clientHeight
+let button = document.getElementById('button')
 
-// console.log(currentWebWidth)
-// console.log(currentWebHeight)
-// console.log(currentHeadHeight)
+let currentWebWidth = document.documentElement.clientWidth
 
 let currentVideoIndex = 0;
+let invalid ;
 
 function playNextVideo() {
 videos[currentVideoIndex].pause();
@@ -32,41 +29,42 @@ videos[currentVideoIndex].play();
 function startVideoAnimation() {
 videos[currentVideoIndex].style.display = 'block';
 videos[currentVideoIndex].play();
-setInterval(playNextVideo, 5000); // Change video every 5 seconds (5000 milliseconds)
+invalid = setInterval(playNextVideo, 5000); // Change video every 5 seconds (5000 milliseconds)
 }
-
 startVideoAnimation();
 
-function changeTheme() {
-    // Checks if the current theme is in dark mode and changes to light mode
+function changeTheme (){
     if(body.classList.contains('body1')){
+        themeBack.classList.remove('button-background')
+        themeBack.classList.add('but-Back');
         body.classList.remove('body1');
         body.classList.add('body2');
-        themeBack.classList.remove('button-background');
-        themeBack.classList.add('but-Back');
+        themeMode.innerHTML = 'Light mode';
         themeChanger.classList.remove('themeButton');
         themeChanger.classList.add('but2');
-        themeMode.innerHTML = 'Light mode';
+        head.classList.remove('head1');
+        head.classList.add('head2');
+        projectsAndContact.classList.remove('projects_contact1');
+        projectsAndContact.classList.add('projects_contact2');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-bars');
         icon.style.color = '#fff';
-        if(icon.classList.contains('fa-moon')){
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-bars');
-        }
     }
-    // Checks if the current theme is in loght mode and changes to dark mode
-    else if(body.classList.contains('body2')){
+    else{
+        themeBack.classList.remove('but-Back')
+        themeBack.classList.add('button-background');
         body.classList.remove('body2');
         body.classList.add('body1');
-        themeBack.classList.remove('but-Back');
-        themeBack.classList.add('button-background');
+        themeMode.innerHTML = 'Dark mode';
         themeChanger.classList.remove('but2');
         themeChanger.classList.add('themeButton');
-        themeMode.innerHTML = 'Dark mode';
+        head.classList.remove('head2');
+        head.classList.add('head1');
+        projectsAndContact.classList.remove('projects_contact2');
+        projectsAndContact.classList.add('projects_contact1');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-moon');
         icon.style.color = 'black';
-        if(icon.classList.contains('fa-bars')){
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-moon');
-        }
     }
 }
 
@@ -75,8 +73,12 @@ function openOptions() {
         iconContainer.style.color = 'transparent';
         barMenu.classList.remove('barMenu');
         barMenu.classList.add('menuIsActive');
+        body.classList.add('disabledBody')
+        clearTimeout(invalid)
+        videos[currentVideoIndex].pause()
     }
 }
+
 
 // This code is incomplete(what's left: color change when theme is changed)
 function closeMenu() {
@@ -84,6 +86,9 @@ function closeMenu() {
         barMenu.classList.remove('menuIsActive');
         barMenu.classList.add('barMenu');
         iconContainer.style.color = '#fff';
+        body.classList.remove('disabledBody')
+        videos[currentVideoIndex].play()
+        startVideoAnimation()
     }
 }
 
@@ -105,23 +110,6 @@ window.addEventListener('resize', function(){
     }
     // this.location.reload()
 })
-
-// window.onload((e)=>{
-//     // setInterval(() => {
-//     //     video.removeAttribute('src')
-//     // }, 5);
-//     // setTimeout(function(){
-//     //     // video.removeAttribute('src')
-//     //     video.replaceChild('<source src="videos/vid2.mp4">')
-//     //     alert('You are dead hahahahahahah')
-//     // },1000)
-// })
-
-// setTimeout(function(){
-//     // video.removeAttribute('src')
-//     video.appendChild('<source src="videos/vid2.mp4">')
-//     alert('You are dead hahahahahahah')
-// },3000)
 
 
 // setInterval(function() {

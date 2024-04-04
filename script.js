@@ -14,6 +14,13 @@ let videos = document.querySelectorAll('video')
 let button = document.getElementById('button')
 
 let currentWebWidth = document.documentElement.clientWidth
+let lightMode = document.createElement('img')
+lightMode.src = 'images/light.png'
+lightMode.alt = 'Light mode'
+lightMode.className = 'lightMode'
+
+
+
 
 let currentVideoIndex = 0;
 let invalid ;
@@ -46,9 +53,17 @@ function changeTheme (){
         head.classList.add('head2');
         projectsAndContact.classList.remove('projects_contact1');
         projectsAndContact.classList.add('projects_contact2');
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-bars');
-        icon.style.color = '#fff';
+        // icon.classList.remove('fa-moon');
+        // icon.classList.add('fa-bars');
+        // icon.style.color = '#fff';
+        icon.remove()
+        // themeChanger.remove()
+        // themeBack.append(lightMode)
+        themeChanger.appendChild(lightMode)
+        // lightMode.classList.add('themeButton')
+        // lightMode.id = 'themeButton'
+        // lightMode.onclick(changeTheme())
+        // lightMode.onclick = changeTheme()
     }
     else{
         themeBack.classList.remove('but-Back')
@@ -65,6 +80,9 @@ function changeTheme (){
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-moon');
         icon.style.color = 'black';
+        lightMode.remove()
+        themeChanger.appendChild(icon)
+        // themeBack.append(themeChanger)
     }
 }
 
@@ -90,6 +108,18 @@ function closeMenu() {
         videos[currentVideoIndex].play()
         startVideoAnimation()
     }
+}
+
+function download(){
+    // const whatsappContactUrl = 'https://wa.me/593727250/?text=Hello%20there!%20Please%20I%20would%20like%20to%20request%20for%20a%20Website';
+    const emailAddress = 'mailto:mayakay257@gmail.com?subject=Request%20a%20Website&body=Hello%20there!%20Please%20I%20would%20like%20to%20request%20for%20a%20Website'
+
+    let link = document.createElement('a')
+    link.target = 'blank'
+
+    // link.href = whatsappContactUrl;
+    link.href = emailAddress;
+    link.click()
 }
 
 

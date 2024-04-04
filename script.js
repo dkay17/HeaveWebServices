@@ -111,14 +111,14 @@ function closeMenu() {
 }
 
 function download(){
-    // const whatsappContactUrl = 'https://wa.me/593727250/?text=Hello%20there!%20Please%20I%20would%20like%20to%20request%20for%20a%20Website';
-    const emailAddress = 'mailto:mayakay257@gmail.com?subject=Request%20a%20Website&body=Hello%20there!%20Please%20I%20would%20like%20to%20request%20for%20a%20Website'
+    const whatsappContactUrl = 'https://wa.me/593727250/?text=Hello%20there!%20Please%20I%20would%20like%20to%20request%20for%20a%20Website';
+    // const emailAddress = 'mailto:mayakay257@gmail.com?subject=Request%20a%20Website&body=Hello%20there!%20Please%20I%20would%20like%20to%20request%20for%20a%20Website'
 
     let link = document.createElement('a')
     link.target = 'blank'
 
-    // link.href = whatsappContactUrl;
-    link.href = emailAddress;
+    link.href = whatsappContactUrl;
+    // link.href = emailAddress;
     link.click()
 }
 
